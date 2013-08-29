@@ -41,6 +41,9 @@ GEM
     execjs (2.0.1)
     hike (1.2.3)
     i18n (0.6.1)
+    jbuilder (1.5.1)
+      activesupport (>= 3.0.0)
+      multi_json (>= 1.2.0)
     journey (1.0.4)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
@@ -103,8 +106,10 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  jbuilder
   jquery-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
   sqlite3
+  therubyracer
   uglifier (>= 1.0.3)
