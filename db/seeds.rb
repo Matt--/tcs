@@ -11,7 +11,46 @@ Techlevel.create([
 	{tl: '6'},{tl: '7'},{tl: '8'},{tl: '9'},{tl: 'A'},{tl: 'B'},
 	{tl: 'C'},{tl: 'D'},{tl: 'E'},{tl: 'F'},{tl: 'G'}])
 Uspcode.create([
-	{usp: '0'}, {usp: '1'}, {usp: '2'}, {usp: '3'}, {usp: '4'}, {usp: '5'}, {usp: '6'}, {usp: '7'}, {usp: '8'}, {usp: '9'}, {usp: 'A'}, {usp: 'B'}, {usp: 'C'}, {usp: 'D'}, {usp: 'E'}, {usp: 'F'}, {usp: 'G'}, {usp: 'H'}, {usp: 'J'}, {usp: 'K'}, {usp: 'L'}, {usp: 'M'}, {usp: 'N'}, {usp: 'P'}, {usp: 'Q'}, {usp: 'R'}, {usp: 'S'}, {usp: 'T'}, {usp: 'U'}, {usp: 'V'}, {usp: 'W'}, {usp: 'X'}, {usp: 'Y'}, {usp: 'Z'}])
+	{usp: '0'}, {usp: '1'}, {usp: '2'}, {usp: '3'}, {usp: '4'}, {usp: '5'},
+  {usp: '6'}, {usp: '7'}, {usp: '8'}, {usp: '9'}, {usp: 'A'}, {usp: 'B'},
+  {usp: 'C'}, {usp: 'D'}, {usp: 'E'}, {usp: 'F'}, {usp: 'G'}, {usp: 'H'},
+  {usp: 'J'}, {usp: 'K'}, {usp: 'L'}, {usp: 'M'}, {usp: 'N'}, {usp: 'P'},
+  {usp: 'Q'}, {usp: 'R'}, {usp: 'S'}, {usp: 'T'}, {usp: 'U'}, {usp: 'V'},
+  {usp: 'W'}, {usp: 'X'}, {usp: 'Y'}, {usp: 'Z'}])
+Componentname.create([
+  {component: 'bridge'},
+  {component: 'computer'},
+  {component: 'drivejump'},
+  {component: 'drivemaneouver'},
+  {component: 'powerplant'},
+  {component: 'nucleardamper'},
+  {component: 'mesonscreen'},
+  {component: 'blackglobe'},
+  {component: 'laser'},
+  {component: 'missile'},
+  {component: 'energy'},
+  {component: 'pa'},
+  {component: 'meson'},
+  {component: 'repulsor'},
+  {component: 'fuelscoops'},
+  {component: 'configuration'},
+  {component: 'hullarmour'},
+  {component: 'controlcouches'},
+  {component: 'purificationplant'},
+  {component: 'fueljump'},
+  {component: 'fuelpower'},
+  {component: 'fuelcargo'},
+  {component: 'cargo'},
+  {component: 'crew'},
+  {component: 'passengers'},
+  {component: 'hanger'},
+  {component: 'craft'}
+])
+
+Primaryor.create([
+  {rank: 'primary'}, 
+  {rank: 'secondary'}, 
+  {rank: 'tertiary'}])
 Primarytype.create([
 	{code1: 'A', name1: 'Merchant'},
 	{code1: 'B', name1: 'Battle'},

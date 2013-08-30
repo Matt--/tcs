@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130829132333) do
+ActiveRecord::Schema.define(:version => 20130830045337) do
+
+  create_table "componentnames", :force => true do |t|
+    t.string   "component",  :limit => 17, :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  create_table "primaryors", :force => true do |t|
+    t.string   "rank",       :limit => 9, :null => false
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
 
   create_table "primarytypes", :force => true do |t|
     t.string   "code1",      :limit => 1,  :null => false
