@@ -1,8 +1,8 @@
 class CreateSecondarytypes < ActiveRecord::Migration
   def change
     create_table :secondarytypes do |t|
-      t.string :code2, limit: 1, null: false
-      t.string :name2, limit: 12, null: false
+      t.string :usp , limit: 1, null: false
+      t.string :name, limit: 12, null: false, unique: true
 
       t.timestamps
     end

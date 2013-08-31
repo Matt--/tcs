@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @shipdesign.name %>
+</p>
+<p>
+  <b>Empire:</b>
+  <%= @shipdesign.empire.name %>
+</p>
+
+<p>
+  <b>Primarytype:</b>
+  <%= @shipdesign.primarytype.name %>
+</p>
+
+<p>
+  <b>Secondarytype:</b>
+  <%= @shipdesign.secondarytype.name %>
+</p>
+
+<p>
+  <b>Component:</b>
+  <%= @shipdesign.component_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_shipdesign_path(@shipdesign) %> |
+<%= link_to 'Back', shipdesigns_path %>

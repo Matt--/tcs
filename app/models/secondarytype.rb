@@ -1,3 +1,5 @@
 class Secondarytype < ActiveRecord::Base
-  attr_accessible :code2, :name2
+  attr_accessible :usp, :name
+
+  has_many :shipdesigns
 end

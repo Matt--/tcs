@@ -1,0 +1,33 @@
+<h1>Listing shipdesigns</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Empire</th>
+    <th>Primarytype</th>
+    <th>Secondarytype</th>
+    <th>Component</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @shipdesigns.each do |shipdesign| %>
+  <tr>
+    <td><%= shipdesign.name %></td>
+    <td><%= shipdesign.empire.name %></td>
+    <td><%= shipdesign.primarytype.name %></td>
+    <td><%= shipdesign.secondarytype.name %></td>
+    <td><%= shipdesign.component_id %></td>
+    <td></td>
+    <td><%= link_to 'Show', shipdesign %></td>
+    <td><%= link_to 'Edit', edit_shipdesign_path(shipdesign) %></td>
+    <td><%= link_to 'Destroy', shipdesign, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Shipdesign', new_shipdesign_path %>

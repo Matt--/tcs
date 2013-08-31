@@ -1,0 +1,2 @@
+module ShipdesignsHelper
+end

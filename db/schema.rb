@@ -11,12 +11,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830045337) do
+ActiveRecord::Schema.define(:version => 20130831043021) do
 
   create_table "componentnames", :force => true do |t|
-    t.string   "component",  :limit => 17, :null => false
+    t.string   "name",  :limit => 17, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "components", :force => true do |t|
+    t.integer  "componentname_id",                :null => false
+    t.integer  "primaryor_id",     :default => 0
+    t.integer  "quantity",         :default => 1
+    t.integer  "value_id",                        :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  create_table "empires", :force => true do |t|
+    t.string   "name",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "primaryors", :force => true do |t|
@@ -26,17 +41,27 @@ ActiveRecord::Schema.define(:version => 20130830045337) do
   end
 
   create_table "primarytypes", :force => true do |t|
-    t.string   "code1",      :limit => 1,  :null => false
-    t.string   "name1",      :limit => 12, :null => false
+    t.string   "usp",       :limit => 1,  :null => false
+    t.string   "name",      :limit => 12, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
 
   create_table "secondarytypes", :force => true do |t|
-    t.string   "code2",      :limit => 1,  :null => false
-    t.string   "name2",      :limit => 12, :null => false
+    t.string   "usp",      :limit => 1,  :null => false
+    t.string   "name",      :limit => 12, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+  end
+
+  create_table "shipdesigns", :force => true do |t|
+    t.string   "name"
+    t.integer  "empire_id"
+    t.integer  "primarytype_id"
+    t.integer  "secondarytype_id"
+    t.integer  "component_id"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
   create_table "techlevels", :force => true do |t|
@@ -49,6 +74,22 @@ ActiveRecord::Schema.define(:version => 20130830045337) do
     t.string   "usp",        :limit => 1, :null => false
     t.datetime "created_at",              :null => false
     t.datetime "updated_at",              :null => false
+  end
+
+  create_table "values", :force => true do |t|
+    t.string   "name",                                                                     :null => false
+    t.string   "model"
+    t.string   "option"
+    t.text     "description"
+    t.string   "usp",         :limit => 1,                                :default => "7", :null => false
+    t.integer  "tl",                                                      :default => 7,   :null => false
+    t.decimal  "ton",                      :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "cost",                     :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "ep",                       :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "hp",                       :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "crew",                     :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.datetime "created_at",                                                               :null => false
+    t.datetime "updated_at",                                                               :null => false
   end
 
 end

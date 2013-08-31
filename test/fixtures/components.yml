@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  value_id: 1
+  componentname_id: 1
+  primaryor_id: 1
+  quantity: 1
+
+two:
+  value_id: 1
+  componentname_id: 1
+  primaryor_id: 1
+  quantity: 1

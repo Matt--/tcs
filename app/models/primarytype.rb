@@ -1,3 +1,5 @@
 class Primarytype < ActiveRecord::Base
-  attr_accessible :code1, :name1
+  attr_accessible :usp, :name
+  
+  has_many :shipdesigns
 end

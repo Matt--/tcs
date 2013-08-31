@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  type: 
+  description: MyText
+  usp_id: 
+  tl_id: 
+  ton: 
+  cost: 
+  ep: 
+  hp: 
+  crew: 
+
+two:
+  name: MyString
+  type: 
+  description: MyText
+  usp_id: 
+  tl_id: 
+  ton: 
+  cost: 
+  ep: 
+  hp: 
+  crew: 

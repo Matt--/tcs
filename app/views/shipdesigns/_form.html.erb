@@ -1,0 +1,38 @@
+<%= form_for(@shipdesign) do |f| %>
+  <% if @shipdesign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@shipdesign.errors.count, "error") %> prohibited this shipdesign from being saved:</h2>
+
+      <ul>
+      <% @shipdesign.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  
+  <div class="field">
+    <%= 'Ship name' %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :empire_id %><br />
+    <%= f.collection_select :empire_id, Empire.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :primarytype_id %><br />
+    <%= f.collection_select :primarytype_id, Primarytype.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :secondarytype_id %><br />
+    <%= f.collection_select :secondarytype_id, Secondarytype.all, :id, :name %>
+  </div>
+  <div class="field">
+    <%= f.label :component_id %><br />
+    <%= f.collection_select :componentname_id, Componentname.all, :id, :name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

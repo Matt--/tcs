@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  empire_id: 1
+  primarytype_id: 1
+  secondarytype: 1
+  value_id: 1
+  component_id: 1
+  fuelton: 1
+  name: MyString
+
+two:
+  empire_id: 1
+  primarytype_id: 1
+  secondarytype: 1
+  value_id: 1
+  component_id: 1
+  fuelton: 1
+  name: MyString
