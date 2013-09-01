@@ -14,16 +14,17 @@
 ActiveRecord::Schema.define(:version => 20130831043021) do
 
   create_table "componentnames", :force => true do |t|
-    t.string   "name",  :limit => 17, :null => false
+    t.string   "name",       :limit => 17, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
 
   create_table "components", :force => true do |t|
-    t.integer  "componentname_id",                :null => false
+    t.integer  "shipdesign_id"
+    t.integer  "componentname_id"
     t.integer  "primaryor_id",     :default => 0
     t.integer  "quantity",         :default => 1
-    t.integer  "value_id",                        :null => false
+    t.integer  "value_id"
     t.datetime "created_at",                      :null => false
     t.datetime "updated_at",                      :null => false
   end
@@ -41,15 +42,15 @@ ActiveRecord::Schema.define(:version => 20130831043021) do
   end
 
   create_table "primarytypes", :force => true do |t|
-    t.string   "usp",       :limit => 1,  :null => false
-    t.string   "name",      :limit => 12, :null => false
+    t.string   "usp",        :limit => 1,  :null => false
+    t.string   "name",       :limit => 12, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
 
   create_table "secondarytypes", :force => true do |t|
-    t.string   "usp",      :limit => 1,  :null => false
-    t.string   "name",      :limit => 12, :null => false
+    t.string   "usp",        :limit => 1,  :null => false
+    t.string   "name",       :limit => 12, :null => false
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
@@ -59,9 +60,9 @@ ActiveRecord::Schema.define(:version => 20130831043021) do
     t.integer  "empire_id"
     t.integer  "primarytype_id"
     t.integer  "secondarytype_id"
-    t.integer  "component_id"
-    t.datetime "created_at",                      :null => false
-    t.datetime "updated_at",                      :null => false
+    t.integer  "components_count"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "techlevels", :force => true do |t|
@@ -77,19 +78,20 @@ ActiveRecord::Schema.define(:version => 20130831043021) do
   end
 
   create_table "values", :force => true do |t|
-    t.string   "name",                                                                     :null => false
+    t.integer  "component_id"
+    t.string   "name",                                                                      :null => false
     t.string   "model"
     t.string   "option"
     t.text     "description"
-    t.string   "usp",         :limit => 1,                                :default => "7", :null => false
-    t.integer  "tl",                                                      :default => 7,   :null => false
-    t.decimal  "ton",                      :precision => 12, :scale => 4, :default => 0.0, :null => false
-    t.decimal  "cost",                     :precision => 12, :scale => 4, :default => 0.0, :null => false
-    t.decimal  "ep",                       :precision => 12, :scale => 4, :default => 0.0, :null => false
-    t.decimal  "hp",                       :precision => 12, :scale => 4, :default => 0.0, :null => false
-    t.decimal  "crew",                     :precision => 12, :scale => 4, :default => 0.0, :null => false
-    t.datetime "created_at",                                                               :null => false
-    t.datetime "updated_at",                                                               :null => false
+    t.string   "usp",          :limit => 1,                                :default => "7", :null => false
+    t.integer  "tl",                                                       :default => 7,   :null => false
+    t.decimal  "ton",                       :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "cost",                      :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "ep",                        :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "hp",                        :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.decimal  "crew",                      :precision => 12, :scale => 4, :default => 0.0, :null => false
+    t.datetime "created_at",                                                                :null => false
+    t.datetime "updated_at",                                                                :null => false
   end
 
 end

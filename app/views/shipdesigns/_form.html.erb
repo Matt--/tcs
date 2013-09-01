@@ -30,7 +30,8 @@
   </div>
   <div class="field">
     <%= f.label :component_id %><br />
-    <%= f.collection_select :componentname_id, Componentname.all, :id, :name %>
+    <%= @shipdesign.components.first.componentname.name %>
+    <%= f.collection_select @shipdesign.components.first.componentname.id, Componentname.all, :id, :name %>
   </div>
   <div class="actions">
     <%= f.submit %>

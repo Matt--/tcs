@@ -6,6 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+####################################################################
+###### Tables
 Value.create([
   {name: 'computer', model: 'model 1',    option: '',    usp: '1', cost: 2,   ton: 1,  tl:  5, ep: 0},
   {name: 'computer', model: 'model 1fib', option: 'fib', usp: '1', cost: 3,   ton: 2,  tl:  5, ep: 0},
@@ -290,3 +292,20 @@ Secondarytype.create([
 	{usp: 'Y', name: 'Shuttle'},
 	{usp: 'Y', name: 'Cutter'},
 	{usp: 'Z', name: 'Experimental'}])
+
+###################################################################
+##### test data
+Shipdesign.create([
+  {name: 'test_ship',
+  empire_id: 1,
+  primarytype_id: 1,
+  secondarytype_id: 1}
+])
+
+Component.create([
+  {shipdesign_id: 1,
+  componentname_id: 1,
+  primaryor_id: 1,
+  quantity: 1,
+  value_id: 1}
+])

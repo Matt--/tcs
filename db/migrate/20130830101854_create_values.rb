@@ -1,6 +1,7 @@
 class CreateValues < ActiveRecord::Migration
   def change
     create_table :values do |t|
+      t.integer :component_id
       t.string 	:name,	null: false
       t.string  :model
       t.string 	:option

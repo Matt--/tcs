@@ -4,6 +4,6 @@ class Component < ActiveRecord::Base
   belongs_to :componentname
   belongs_to :primaryor
   belongs_to :value
-  belongs_to :shipdesign
+  belongs_to :shipdesign, :counter_cache => true
   
 end
