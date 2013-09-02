@@ -14,6 +14,7 @@ class ShipdesignsController < ApplicationController
   # GET /shipdesigns/1.json
   def show
     @shipdesign = Shipdesign.find(params[:id])
+    @shipdesign.components.build
 
     respond_to do |format|
       format.html # show.html.erb
@@ -35,6 +36,7 @@ class ShipdesignsController < ApplicationController
   # GET /shipdesigns/1/edit
   def edit
     @shipdesign = Shipdesign.find(params[:id])
+    @shipdesign.components.build
   end
 
   # POST /shipdesigns
@@ -57,14 +59,17 @@ class ShipdesignsController < ApplicationController
   # PUT /shipdesigns/1.json
   def update
     @shipdesign = Shipdesign.find(params[:id])
+    @shipdesign.components.build
 
     respond_to do |format|
       if @shipdesign.update_attributes(params[:shipdesign])
-        format.html { redirect_to @shipdesign, notice: 'Shipdesign was successfully updated.' }
+        format.html { redirect_to @shipdesign, 
+                              notice: 'Shipdesign was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
-        format.json { render json: @shipdesign.errors, status: :unprocessable_entity }
+        format.json { render json: @shipdesign.errors,
+                              status: :unprocessable_entity }
       end
     end
   end
